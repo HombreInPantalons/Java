@@ -5,6 +5,10 @@ import java.util.Scanner;
 public class TotalSalary {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int bonus = 1000;
+        int bigBonus = 1250;
+        int quota = 10;
+
 
         System.out.println("Total salary?");
         double salary = scanner.nextDouble();
@@ -12,10 +16,12 @@ public class TotalSalary {
         System.out.println("Total sales?");
         int sales = scanner.nextInt();
 
-        if (sales >= 10) {
-            System.out.println("Total salary is: $" + (salary + 1250));
+        scanner.close();
+
+        if (sales >= quota) {
+            System.out.println("Total salary is: $" + (salary + bigBonus));
         } else {
-            System.out.println("Total salary is: $" + (salary + 1000));
+            System.out.println("Total salary is: $" + (salary + bonus));
         }
     }
 }
