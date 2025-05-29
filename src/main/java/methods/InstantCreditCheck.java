@@ -36,7 +36,7 @@ public class InstantCreditCheck {
     }
 
     public static boolean isUserQualified(double salary, double credit){
-        return salary > requiredSalary && credit >= requiredCreditScore;
+        return (salary > requiredSalary && credit >= requiredCreditScore);
     }
 
 }
