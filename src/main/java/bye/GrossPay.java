@@ -1,3 +1,5 @@
+package bye;
+
 import java.util.Scanner;
 
 public class GrossPay {
