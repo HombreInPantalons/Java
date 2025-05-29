@@ -1,4 +1,4 @@
-package bye;
+package simple;
 
 import java.util.Scanner;
 
