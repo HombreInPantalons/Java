@@ -3,6 +3,8 @@ package objects;
 import java.util.Scanner;
 
 public class HomeAreaCalcV2 {
+    //methods kunnen static gemaakt worden wanneer nodig, maar enkel als er in die method geen (global) variables of andere benodigdheden zijn vanuit een andere
+    //method of class. Als static blijf je dus statisch, local.
 
     //Hier maken we de scanner private idpv static in onze class global.
 
