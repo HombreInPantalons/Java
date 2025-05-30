@@ -56,6 +56,8 @@ public class TextProcessor {
                 //blijven spaties toevoegen op dezelfde plaats en niet verder zoeken naar volgende hoofdletters.
             }
         }
+        System.out.println("\n");
+        System.out.println("This is your text with spaces between the words: ");
         System.out.println(modifiedInput);
 
     }
