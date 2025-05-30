@@ -1,5 +1,7 @@
 package objects;
 
+import inheritance_sealed_classes.Shape;
+
 public class Rectangle {
 
 //Encapsulation is de Field (data) en de Behavior (methods) private of public (so far) toekennen.

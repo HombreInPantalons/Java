@@ -1,4 +1,4 @@
-package inheritance_2;
+package inheritance_garage_bekijken;
 
 public class Coupe extends Car{
 
