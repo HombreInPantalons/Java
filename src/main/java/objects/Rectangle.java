@@ -37,6 +37,10 @@ public class Rectangle {
 
     //BEHAVIOR van de rectangle, (de methods) houden we best public.
 
+    public void print(){
+        System.out.println("I am a rectangle");
+    }
+
     public double calcOmtrek(){
         return(2 * lengte) + (2 * breedte);
     }
