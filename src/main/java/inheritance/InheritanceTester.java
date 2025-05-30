@@ -14,8 +14,8 @@ public class InheritanceTester {
         //System.out.println( square.calcOmtrek());
 
         Rectangle rectangle = new Rectangle();
-        rectangle.print(); //Hier hebben we enkel de print() zonder arguments omdat de method van de Superclass komt
-        square.print("square"); //hier hebben we de keuze uit print() en print(what) omdat we de overload method hebben gebruikt
+        //rectangle.print(); //Hier hebben we enkel de print() zonder arguments omdat de method van de Superclass komt
+        //square.print("square"); //hier hebben we de keuze uit print() en print(what) omdat we de overload method hebben gebruikt
     }
 
 
