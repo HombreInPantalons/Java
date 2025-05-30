@@ -1,5 +1,9 @@
 package strings;
 
+//String zijn in het algemeen immutable. Tenzij men gebruik maakt van String Builder, dan kan je mutable strings creëren.
+
+
+
 public class TextProcessor {
 
     public static void main(String[] args) {
@@ -27,7 +31,7 @@ public class TextProcessor {
     public static void reverseString(String input){
 
 
-        //For loops beginnend van achteraan de string (-1 om van aantal characters een index te maken, want index start op 0).
+        //For loop beginnend van achteraan de string (-1 om van aantal characters een index te maken, want index start op 0).
         //Zolang index groter dan of gelijk is aan 0 (eerste index) moet de method blijven 'loopen'.
         //Na elke loop minderen we de index met 1 (i--).
         System.out.println("This is your text reversed: ");
