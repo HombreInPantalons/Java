@@ -10,6 +10,7 @@ public class TextProcessor {
 
       countAndPrintWords("Hello World lorem ipsum etc etc blabla");
       reverseString("Hello World lorem ipsum etc etc blabla");
+      addSpaces("HelloWorldLoremIpsumEtcEtcBlabla");
     }
 
     public static void countAndPrintWords(String input){
@@ -40,6 +41,23 @@ public class TextProcessor {
             System.out.print(input.charAt(i)); //Print de character op index;
         }
         System.out.println(" ");
+    }
+
+    public static void addSpaces(String input) {
+
+        //We maken een nieuwe String, met de StringBuilder method (= mutable), om spaties toe te voegen.
+        var modifiedInput = new StringBuilder(input);
+        for(int i = 0; i < modifiedInput.length(); i++){
+
+            //Als de character At index van modified input uppercase is EN het is niet op index 0. Voeg een spatie toe VOOR de huidige index.
+            if(i != 0 && Character.isUpperCase(modifiedInput.charAt(i))){
+                modifiedInput.insert(i, " "); //insert = voor de index.
+                i++; //omdat we een spatie toevoegen VOOR de hoofdletter, moet men de index nadien terug 1 opschuiven. Of het programma zal
+                //blijven spaties toevoegen op dezelfde plaats en niet verder zoeken naar volgende hoofdletters.
+            }
+        }
+        System.out.println(modifiedInput);
+
     }
 
 }
