@@ -28,7 +28,9 @@ public class LotteryTicket {
             do {
 
                 randomNumber = random.nextInt(1,MAX_TICKET_NUMBER);
+
             } while (search(ticket, randomNumber));
+
             ticket[i] = randomNumber;
         }
 
