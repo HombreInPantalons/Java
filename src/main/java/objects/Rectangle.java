@@ -6,12 +6,13 @@ public class Rectangle {
 //Constructors komen tussen Field en Behavior
 
 
-    //FIELD van de rectangle, (de data) houden we best private.
+    //FIELD van de rectangle, (de data) houden we best private als we dit voor ons eigen class willen houden.
+    //Protected gebruiken we als we andere classes willen laten inheriten van deze FIELD.
 
-    private double lengte;
-    private double breedte;
-    private double hoogte;
-    private int zijden = 6;
+    protected double lengte;
+    protected double breedte;
+    protected double hoogte;
+    protected int zijden = 6;
 
 
     //Constructors van de rectangle
@@ -36,15 +37,15 @@ public class Rectangle {
 
     //BEHAVIOR van de rectangle, (de methods) houden we best public.
 
-    double calcOmtrek(){
+    public double calcOmtrek(){
         return(2 * lengte) + (2 * breedte);
     }
 
-    double calcOppervlakte(){
+    public double calcOppervlakte(){
         return(lengte * breedte);
     }
 
-    double calcInhoud(){
+    public double calcInhoud(){
         return(lengte * breedte * hoogte);
     }
 
