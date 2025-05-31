@@ -1,14 +1,13 @@
 package data_structures;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class CollectionsDemo {
 
     public static void main(String[] args) {
         //setDemo();
-        listDemo();
+        //listDemo();
+        //queueDemo();
+        mapDemo();
     }
 
 
@@ -48,10 +47,91 @@ public class CollectionsDemo {
         //.set = give index of the item you want to remove, and then give the name for the new object to take place.
         fruits.set(2, "grape");
         fruits.add("lemon");
-        fruits.remove("lemon"); //removes first lemon found in list
+        //fruits.remove("lemon"); //removes first lemon found in list
         fruits.remove(3);
 
         System.out.println(fruits);
+        System.out.println("Fruit at index 2: " + fruits.get(2));
+        System.out.println("Index of grape: " + fruits.indexOf("grape"));
+        System.out.println("Last index of lemon: " + fruits.lastIndexOf("lemon"));
+        System.out.println("First index of lemon: " + fruits.indexOf("lemon"));
+
+        //Immutable list
+        List moreFruit = List.of("cherry", "plum");
+
+
+
     }
 
+
+    public static void queueDemo(){
+
+        //queue = LinkedList
+        //queue holds ordered elements that are processed in order which they are added. (FIFO)
+        //Duplicates allowed
+
+        Queue fruits = new LinkedList();
+
+        fruits.add("apple");
+        fruits.add("lemon");
+        fruits.add("banana");
+        fruits.add("orange");
+        fruits.add("lemon");
+
+        //.remove(); heeft bij een queue geen argument nodig. Zoals bij het FIFO systeem zal het het eerste element verwijderen dat het tegenkomt.
+        //De head van the line, laatste element is the tail.
+        //In een queue is het de bedoeling dat data dat wordt verwijderd processed wordt. Daarom gaat .remove(); hier het object returnen.
+        //In de meeste gevallen zal .remove(); 'void' returnen, maar bij een queue (linkedlist) nooit.
+        //Hieronder wordt apple verwijderd, en opgeslagen in de var removed.
+
+        var removed = fruits.remove();
+
+        //.peek(); laat u zien wat het volgende object is in de queue, en returned het object zonder het te verwijderen van de queue.
+        System.out.println("head of queue: " + fruits.peek());
+
+        System.out.println(removed);
+        System.out.println(fruits);
+
+
+    }
+
+
+    public static void mapDemo(){
+
+        //map does not inherit from the collections interface (data structures) zoals set list & queue. Die wel.
+        //Daarom heeft Map niet dezelfde methods als de rest.
+        //unordered unique key-value pairs.
+
+        Map fruitCalories = new HashMap();
+
+        //.put om waarden toe te voegen. De 95 calorieën hier, zijn geen int maar wel Integer. (Object).
+        //Met .put ga je elementen overschrijven als je duplicates invoegt.
+        //Met .putIfAbsent ga je eerst checken of het element al aanwezig is.
+
+        fruitCalories.put("apple", 95);
+        fruitCalories.put("lemon", 20);
+        fruitCalories.put("banana", 105);
+        fruitCalories.put("orange", 45);
+
+        fruitCalories.remove("lemon");
+        fruitCalories.putIfAbsent("lemon", 17);
+        fruitCalories.putIfAbsent("lemon", 25);
+
+        //If you search the key you get the value.
+        System.out.println("banana calories: " + fruitCalories.get("banana"));
+
+        //Does it contain a specific key?
+        System.out.println("Contains orange? " + fruitCalories.containsKey("orange"));
+
+        System.out.println(fruitCalories);
+
+        //Immutable map
+        Map immutableFruitCalories = Map.of(
+
+                "apple", 95,
+                "lemon", 20,
+                "banana", 105,
+                "orange", 45
+        );
+    }
 }
