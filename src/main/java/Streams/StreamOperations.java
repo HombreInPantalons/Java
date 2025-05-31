@@ -1,6 +1,7 @@
 package Streams;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamOperations {
 
@@ -20,6 +21,7 @@ public class StreamOperations {
         //reduceDemo();
         //intReduceDemo();
         //collectDemo();
+        //multiOperationDemo();
     }
     public static void anyMatchDemo(){
 
@@ -74,5 +76,33 @@ public class StreamOperations {
         List<Integer> numbers = List.of(2,4,6,8,10);
         var sum = numbers.stream().reduce(0,(a,b) -> a+b);
         System.out.println(sum);
+    }
+
+    public static void collectDemo(){
+        //gaat meestal gebruikt worden op finale data en dan de stream assignen naar een collection of choice.
+        //we zullen hier iets filteren en dan collecten.
+        //Terminal Operator
+
+        List veggiesEndingWithS = veggies.stream()
+                .filter(v -> v.endsWith("s"))
+                .collect(Collectors.toList());
+        veggiesEndingWithS.forEach(System.out::println);
+
+    }
+
+    public static void multiOperationDemo(){
+        //Meerdere samenvoegen om de echte power te zien :)
+        List crazyList = veggies.stream()
+                //sorteren
+                .sorted()
+                //filteren starten met c
+                .filter(v -> v.startsWith("c"))
+                //alles naar uppercase
+                .map(String::toUpperCase)
+                //we voegen er een woord aan toe, lambda in lambda
+                .map(v-> v.transform(w -> "yummy " + w))
+                //We collecten alles in een nieuwe list
+                .collect(Collectors.toList());
+            crazyList.forEach(System.out::println);
     }
 }
