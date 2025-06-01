@@ -7,7 +7,7 @@ public class ExceptionHandling {
 
     public static void main(String[] args) {
         //We creëren een file object met een pathname naar waar de file zich bevindt.
-        File file = new File("~/processingnothing/fileren.txt");
+        File file = new File("/watha/nowhere/fileren.txt");
         //Java geeft ons hier een error bij .createNewFile() omdat er moet gekeken worden naar de exception handling.
         //Hier maken we gebruik van Try Catch.
         //De IOException kunnen we aflezen van de error die we op voorhand konden zien bij createNewFile();
@@ -16,6 +16,7 @@ public class ExceptionHandling {
             file.createNewFile();
         }catch(IOException e) {
             System.out.println("Sorry, an error occurred");
+
         }
     }
 }
